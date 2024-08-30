@@ -5,9 +5,14 @@ namespace markhuot\keystone\helpers\base;
 use Craft;
 use craft\helpers\App;
 
-function app(): \craft\web\Application|\craft\console\Application
+/**
+ * @template T
+ * @param class-string<T> $class
+ * @return T
+ */
+function app(string $class)
 {
-    return Craft::$app;
+    return Craft::$container->get($class);
 }
 
 function parseEnv(string $alias): string
@@ -20,12 +25,7 @@ function parseEnv(string $alias): string
 }
 
 /**
- * @template T
- *
  * @phpstan-assert !true $condition
- *
- * @param  T  $condition
- * @return T
  */
 function throw_if(mixed $condition, \Exception|string $message): void
 {
@@ -39,12 +39,7 @@ function throw_if(mixed $condition, \Exception|string $message): void
 }
 
 /**
- * @template T
- *
  * @phpstan-assert true $condition
- *
- * @param  T  $condition
- * @return T
  */
 function throw_unless(mixed $condition, \Exception|string $message): void
 {

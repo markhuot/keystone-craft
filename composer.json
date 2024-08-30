@@ -10,8 +10,6 @@
             "markhuot\\keystone\\tests\\": "tests/"
         },
         "files": [
-            "src/helpers/event.php",
-            "src/helpers/data.php",
             "src/helpers/base.php"
         ]
     },
@@ -22,10 +20,10 @@
         }
     ],
     "require-dev": {
-        "markhuot/craft-pest-core": "dev-main",
+        "markhuot/craft-pest-core": "dev-craft5",
         "phpstan/phpstan": "^1.10",
         "laravel/pint": "^1.13",
-        "craftcms/craft": "dev-main"
+        "craftcms/craft": "^5.0.1"
     },
     "extra": {
         "name": "Keystone",
@@ -44,8 +42,7 @@
         }
     },
     "require": {
-        "craftcms/cms": "^4.5.7",
-        "nikic/php-parser": "^4.17",
-        "sebastian/comparator": "^5.0@dev"
+        "craftcms/cms": "^5.0.1",
+        "craftcms/phpstan": "dev-main"
     }
 }
